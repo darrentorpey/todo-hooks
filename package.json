@@ -1,0 +1,23 @@
+{
+  "name": "darrens-hooks-todo-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "alias": {
+    "components": "./src/components"
+  },
+  "dependencies": {
+    "@material-ui/core": "4.1.1",
+    "@material-ui/icons": "4.2.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}
