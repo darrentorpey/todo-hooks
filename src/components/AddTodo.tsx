@@ -1,30 +1,13 @@
 import React, { memo } from 'react'
-import { TextField, Paper, Button, Grid } from '@material-ui/core'
 
-const AddTodo = memo((props: any) => (
-  <Paper style={{ margin: 16, padding: 16 }}>
-    <Grid container>
-      <Grid xs={10} md={11} item style={{ paddingRight: 16 }}>
-        <TextField
-          placeholder="Add Todo here"
-          value={props.inputValue}
-          onChange={props.onInputChange}
-          onKeyPress={props.onInputKeyPress}
-          fullWidth
-        />
-      </Grid>
-      <Grid xs={2} md={1} item>
-        <Button
-          fullWidth
-          color="secondary"
-          variant="outlined"
-          onClick={props.onButtonClick}
-        >
-          Add
-        </Button>
-      </Grid>
-    </Grid>
-  </Paper>
-))
+import EnterString from './EnterString'
+
+interface Props {
+  onAdd(str: string): void
+}
+
+const AddTodo: React.FC<Props> = memo(props => {
+  return <EnterString placeholder="Add todo" onAdd={props.onAdd} />
+})
 
 export default AddTodo
