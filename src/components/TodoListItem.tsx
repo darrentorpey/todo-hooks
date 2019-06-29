@@ -5,7 +5,7 @@ import {
   Checkbox,
   IconButton,
   ListItemText,
-  ListItemSecondaryAction
+  ListItemSecondaryAction,
 } from '@material-ui/core'
 import DeleteOutlined from '@material-ui/icons/DeleteOutlined'
 

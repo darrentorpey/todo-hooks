@@ -5,7 +5,7 @@ import TodoListItem from './TodoListItem'
 
 const TodoList = memo((props: any) => {
   if (props.items.length === 0) {
-    return null;
+    return null
   }
 
   return (
@@ -16,8 +16,8 @@ const TodoList = memo((props: any) => {
             {...todo}
             key={`TodoItem.${idx}`}
             divider={idx !== props.items.length - 1}
-            onButtonClick={() => props.onItemRemove(idx)}
-            onCheckBoxToggle={() => props.onItemCheck(idx)}
+            onButtonClick={() => props.onItemRemove(todo)}
+            onCheckBoxToggle={() => props.onItemCheck(todo)}
           />
         ))}
       </List>
