@@ -18,7 +18,7 @@ const TOGGLE_TODO = gql`
 `
 
 const ADD_TODO = gql`
-  mutation ADDTodo($text: String!) {
+  mutation AddTodo($text: String!) {
     addTodo(text: $text) @client
   }
 `
@@ -42,16 +42,11 @@ export const useTodos = () => {
     }
   }
 
-  // const todos = data || []
   const todos = data && data.todos ? data.todos : []
-  // console.log('data, type, data.todos', data, typeof data, data.todos)
-  // console.log('todos', todos)
-  // const todos = []
 
   return {
     todos,
     addTodo: (text: string) => {
-      console.log('text', text)
       if (text !== '') {
         addTodo({ variables: { text } })
       }
