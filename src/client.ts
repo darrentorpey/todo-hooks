@@ -44,7 +44,7 @@ export const client = new ApolloClient({
       toggleTodo: (_root, variables, { cache, getCacheKey }) => {
         const id = getCacheKey({ __typename: 'Todo', id: variables.id })
         const fragment = gql`
-          fragment completeTodo on TodoItem {
+          fragment completeTodo on Todo {
             checked
           }
         `
