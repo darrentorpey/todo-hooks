@@ -1,7 +1,9 @@
 import { useState } from 'react'
 
 interface Opts {
-  callbacks?: any
+  callbacks?: {
+    onEnter?(): void
+  }
   initialValue?: ''
 }
 
@@ -15,7 +17,6 @@ export const useInputValue = (opts: Opts = {}) => {
     changeInput: (event: any) => setInputValue(event.target.value),
     clearInput: () => setInputValue(''),
     keyInput: (event: any) => {
-      // console.log('callbacks.onEnter', callbacks.onEnter)
       if ((event.which === 13 || event.keyCode === 13) && callbacks.onEnter) {
         callbacks.onEnter()
 
