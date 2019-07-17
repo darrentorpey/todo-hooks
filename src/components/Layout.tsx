@@ -1,20 +1,19 @@
 import React, { memo } from 'react'
-import { AppBar, Toolbar, Typography, Paper } from '@material-ui/core'
+
+import { TopBar } from './TopBar'
+import { styled } from '../theme'
+
+const Page = styled.div`
+  background-color: ${props => props.theme.palette.backgroundNeutral};
+  height: 100%;
+`
 
 const Layout = memo((props: any) => (
-  <Paper
-    elevation={0}
-    style={{ padding: 0, margin: 0, backgroundColor: '#fafafa' }}
-  >
-    <AppBar color="primary" position="static" style={{ height: 64 }}>
-      <Toolbar style={{ height: 64 }}>
-        <Typography color="inherit">
-          TODO App in TypeScript ft. React Hooks and MUI
-        </Typography>
-      </Toolbar>
-    </AppBar>
+  <Page>
+    <TopBar>TODO App in TypeScript ft. React Hooks and MUI</TopBar>
+
     {props.children}
-  </Paper>
+  </Page>
 ))
 
 export default Layout

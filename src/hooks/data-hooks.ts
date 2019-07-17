@@ -52,6 +52,7 @@ export const useTodos = () => {
       }
     },
     checkTodo: (todo: any) => {
+      console.log('todo', todo)
       toggleTodo({ variables: { id: todo.id } })
     },
     removeTodo: (todo: any) => {
