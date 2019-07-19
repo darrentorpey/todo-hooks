@@ -56,14 +56,12 @@ export const client = new ApolloClient({
         `
         const todo = cache.readFragment({ fragment, id })
         const data = { ...todo, checked: !todo.checked }
-        // console.log('data, id', data, id)
 
         cache.writeData({ id, data })
 
         return null
       },
       removeTodo: (_root, variables, { cache }) => {
-        console.log('variables', variables)
         const { todos } = cache.readQuery({ query: GET_TODOS })
 
         const newTodos = todos.filter((todo: any) => todo.id !== variables.id)
