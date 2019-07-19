@@ -3,9 +3,12 @@ import styled, { CreateStyled } from '@emotion/styled'
 export interface Theme {
   palette: {
     primary: string
+    primaryMedium: string
     primaryLight: string
+    primaryHighlight: string
     secondary: string
     secondaryLight: string
+    secondaryHighlight: string
     primaryNeutral: string
     backgroundNeutral: string
     destructive: string
@@ -24,12 +27,15 @@ export interface Theme {
 export const theme: Theme = {
   // tslint:disable:object-literal-sort-keys
   palette: {
-    primary: '#E09D00',
-    primaryLight: '#F9BB2B',
+    primary: '#EEEEEE',
+    primaryMedium: '#BBBBBB',
+    primaryLight: '#3f51b5',
+    primaryHighlight: '#B9B9B9',
     secondary: '#3f51b5',
     secondaryLight: '#2f41A5',
-    primaryNeutral: '#222',
-    backgroundNeutral: '#EEE',
+    secondaryHighlight: '#4f61C5',
+    primaryNeutral: '#AAAAAA',
+    backgroundNeutral: '#EEEEEE',
     destructive: '#f50057',
   },
   typography: {
@@ -46,10 +52,13 @@ export const darkTheme: Theme = {
   // tslint:disable:object-literal-sort-keys
   palette: {
     primary: '#DDDDDD',
-    primaryLight: '#F9BB2B',
+    primaryNeutral: '#333333',
+    primaryMedium: '#555555',
+    primaryLight: '#898989',
+    primaryHighlight: '#B9B9B9',
     secondary: '#0f2185',
     secondaryLight: '#4f61C5',
-    primaryNeutral: '#333333',
+    secondaryHighlight: '#6F81E5',
     backgroundNeutral: '#222222',
     destructive: '#f50057',
   },

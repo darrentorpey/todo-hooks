@@ -15,6 +15,12 @@ const startingTodos = [
     __typename: 'Todo',
     id: 2,
     checked: true,
+    text: 'Persevere',
+  },
+  {
+    __typename: 'Todo',
+    id: 3,
+    checked: false,
     text: 'Win',
   },
 ]

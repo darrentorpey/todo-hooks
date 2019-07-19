@@ -21,6 +21,7 @@ const TodoList = styled((props: Props) => {
         {props.items.map((todo: any, idx: number) => (
           <MyTodoListItem
             {...todo}
+            // tabIndex={0}
             key={`TodoItem.${idx}`}
             divider={idx !== props.items.length - 1}
             onButtonClick={() => props.onItemRemove(todo)}
@@ -44,11 +45,6 @@ const TodoList = styled((props: Props) => {
     padding: 0;
     position: relative;
     list-style: none;
-
-    li {
-      background-color: ${props => props.theme.palette.primaryNeutral};
-      color: ${props => props.theme.palette.primary};
-    }
   }
 `
 

@@ -2,6 +2,15 @@ import React, { memo } from 'react'
 
 import { styled } from '../theme'
 
+interface Props {
+  checked: boolean
+  text: string
+  tabIndex: number
+  divider: boolean
+  onCheckBoxToggle(): void
+  onButtonClick(): void
+}
+
 const MyCheckBoxWrapper = styled.li<Partial<Props>>`
   width: 100%;
   position: relative;
@@ -11,6 +20,18 @@ const MyCheckBoxWrapper = styled.li<Partial<Props>>`
   justify-content: flex-start;
   text-decoration: none;
 
+  background-clip: padding-box;
+
+  border-bottom: ${props =>
+    props.divider ? '1px solid rgba(0, 0, 0, 0.62)' : '0'};
+
+  background-color: ${props => props.theme.palette.primaryNeutral};
+  color: ${props => props.theme.palette.primary};
+
+  &:focus-within {
+    background-color: ${props => props.theme.palette.primaryMedium};
+  }
+
   > div:first-of-type {
     display: flex;
     padding-right: 48px;
@@ -18,7 +39,8 @@ const MyCheckBoxWrapper = styled.li<Partial<Props>>`
   }
 
   .check {
-    color: ${props => (props.checked ? 'orange' : 'white')};
+    color: ${props =>
+      props.checked ? props.theme.palette.primaryHighlight : 'white'};
     padding: 9px;
   }
 
@@ -62,7 +84,8 @@ const MyCheckBoxWrapper = styled.li<Partial<Props>>`
     transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     border-radius: 50%;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: rgba(200, 200, 200, 0.16);
       color: ${props => props.theme.palette.destructive};
     }
@@ -104,20 +127,7 @@ const MyCheckBoxWrapper = styled.li<Partial<Props>>`
     justify-content: flex-start;
     text-decoration: none;
   }
-
-  background-clip: padding-box;
-
-  border-bottom: ${props =>
-    props.divider ? '1px solid rgba(0, 0, 0, 0.72)' : '0'};
 `
-
-interface Props {
-  checked: boolean
-  text: string
-  divider: boolean
-  onCheckBoxToggle(): void
-  onButtonClick(): void
-}
 
 const CheckboxIcon = ({ checked }: { checked: boolean }) => {
   return (
@@ -137,7 +147,11 @@ const CheckboxIcon = ({ checked }: { checked: boolean }) => {
 }
 
 const MyCheckBox = (props: Props) => (
-  <MyCheckBoxWrapper checked={props.checked} divider={props.divider}>
+  <MyCheckBoxWrapper
+    tabIndex={props.tabIndex}
+    checked={props.checked}
+    divider={props.divider}
+  >
     <div className="list-item">
       <span className="check">
         <CheckboxIcon checked={props.checked} />

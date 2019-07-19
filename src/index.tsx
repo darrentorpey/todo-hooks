@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { ThemeProvider } from 'emotion-theming'
 
 import { darkTheme as theme } from './theme'
+// import { theme } from './theme'
 import { useTodos } from './hooks/data-hooks'
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
@@ -16,7 +17,7 @@ const TodoApp = memo(() => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <AddTodo onAdd={addTodo} />
+        <AddTodo focus onAdd={addTodo} />
 
         <TodoList
           items={todos}

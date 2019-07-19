@@ -1,11 +1,12 @@
 import React, { memo, useCallback } from 'react'
-import { TextField, Paper, Grid, Button } from '@material-ui/core'
 
-import { useInputValue } from '../hooks/mui-hooks'
+import { useInputValue } from '../hooks/control-hooks'
+import { Button } from './Button'
 import { styled } from '../theme'
 
 interface Props {
   buttonText?: string
+  focus: boolean
   inputValue?: string
   onAdd(str: string): void
   placeholder: string
@@ -96,6 +97,14 @@ const Wrap = styled.div`
         background: none;
         box-sizing: content-box;
         -webkit-tap-highlight-color: transparent;
+
+        &:focus {
+          &::placeholder {
+            opacity: 0;
+          }
+
+          padding-left: 0.5em;
+        }
       }
     }
 
@@ -106,11 +115,6 @@ const Wrap = styled.div`
       flex-grow: 0;
       max-width: 100px;
       flex-basis: 100px;
-
-      button {
-        color: ${props => props.theme.palette.secondaryLight};
-        border-color: ${props => props.theme.palette.secondaryLight};
-      }
     }
   }
 `
@@ -145,6 +149,7 @@ const EnterString: React.FC<Props> = memo((props: any) => {
           <div>
             <div>
               <input
+                autoFocus={props.focus}
                 placeholder={props.placeholder}
                 value={inputValue}
                 onChange={changeInput}
@@ -155,14 +160,7 @@ const EnterString: React.FC<Props> = memo((props: any) => {
         </div>
 
         <div className="right">
-          <Button
-            fullWidth
-            color="secondary"
-            variant="outlined"
-            onClick={clearInputAndAddTodo}
-          >
-            {props.buttonText}
-          </Button>
+          <Button onClick={clearInputAndAddTodo}>{props.buttonText}</Button>
         </div>
       </div>
     </Wrap>
