@@ -39,6 +39,7 @@ export const Button = styled.button`
 
   &:focus {
     color: ${props => props.theme.palette.secondaryHighlight};
-    border-color: ${props => props.theme.palette.secondaryHighlight};
+    border: 2px solid ${props => props.theme.palette.secondaryHighlight};
+    padding: 3px 14px;
   }
 `

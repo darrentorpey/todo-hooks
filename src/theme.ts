@@ -27,14 +27,14 @@ export interface Theme {
 export const theme: Theme = {
   // tslint:disable:object-literal-sort-keys
   palette: {
-    primary: '#EEEEEE',
-    primaryMedium: '#BBBBBB',
+    primary: '#444444',
+    primaryNeutral: '#BBBBEE',
+    primaryMedium: '#9999CC',
     primaryLight: '#3f51b5',
-    primaryHighlight: '#B9B9B9',
+    primaryHighlight: '#696969',
     secondary: '#3f51b5',
     secondaryLight: '#2f41A5',
     secondaryHighlight: '#4f61C5',
-    primaryNeutral: '#AAAAAA',
     backgroundNeutral: '#EEEEEE',
     destructive: '#f50057',
   },

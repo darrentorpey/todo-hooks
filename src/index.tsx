@@ -4,9 +4,10 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { ThemeProvider } from 'emotion-theming'
 
 import { ToDoApp } from './ToDoApp'
+import { client } from './client'
+
 import { darkTheme as theme } from './theme'
 // import { theme } from './theme'
-import { client } from './client'
 
 const App = () => (
   <ApolloProvider client={client}>

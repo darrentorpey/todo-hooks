@@ -40,7 +40,9 @@ const MyCheckBoxWrapper = styled.li<Partial<Props>>`
 
   .check {
     color: ${props =>
-      props.checked ? props.theme.palette.primaryHighlight : 'white'};
+      props.checked
+        ? props.theme.palette.primaryHighlight
+        : props.theme.palette.primary};
     padding: 9px;
   }
 
@@ -86,7 +88,8 @@ const MyCheckBoxWrapper = styled.li<Partial<Props>>`
 
     &:hover,
     &:focus {
-      background-color: rgba(200, 200, 200, 0.16);
+      background-color: rgba(200, 200, 200, 0.36);
+      border: 1px solid rgba(100, 100, 100, 0.36);
       color: ${props => props.theme.palette.destructive};
     }
   }
