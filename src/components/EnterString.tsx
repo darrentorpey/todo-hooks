@@ -66,7 +66,8 @@ const Wrap = styled.div`
             position: absolute;
             transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1)
               0ms;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+            border-bottom: 1px solid
+              ${props => props.theme.palette.primaryMedium};
             pointer-events: none;
           }
 

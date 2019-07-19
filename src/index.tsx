@@ -3,12 +3,13 @@ import React, { memo } from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { ThemeProvider } from 'emotion-theming'
 
+import { TopBar } from './components/TopBar'
 import { darkTheme as theme } from './theme'
 // import { theme } from './theme'
 import { useTodos } from './hooks/data-hooks'
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
-import Layout from './components/Layout'
+import { Page } from './components/Page'
 import { client } from './client'
 
 const TodoApp = memo(() => {
@@ -16,15 +17,17 @@ const TodoApp = memo(() => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
-        <AddTodo focus onAdd={addTodo} />
+      <Page>
+        <TopBar>To-Do App in TypeScript ft. React Hooks</TopBar>
+
+        <AddTodo onAdd={addTodo} />
 
         <TodoList
           items={todos}
           onItemCheck={checkTodo}
           onItemRemove={removeTodo}
         />
-      </Layout>
+      </Page>
     </ThemeProvider>
   )
 })

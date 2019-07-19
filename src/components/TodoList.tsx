@@ -10,6 +10,25 @@ interface Props {
   onItemRemove(todo: any): void
 }
 
+function onKeyDown(e) {
+  // console.log(e.key)
+  if (e.key === 'ArrowDown') {
+    const focused = document.querySelector('li:focus-within')
+    const next: HTMLElement = focused.nextElementSibling as HTMLElement
+
+    if (next) {
+      next.querySelector('input').focus()
+    }
+  } else if (e.key === 'ArrowUp') {
+    const focused = document.querySelector('li:focus-within')
+    const prev = focused.previousElementSibling as HTMLElement
+
+    if (prev && 'focus' in prev) {
+      prev.querySelector('input').focus()
+    }
+  }
+}
+
 const TodoList = styled((props: Props) => {
   if (props.items.length === 0) {
     return null
@@ -17,11 +36,10 @@ const TodoList = styled((props: Props) => {
 
   return (
     <div className={props.className}>
-      <ul>
+      <ul onKeyDown={onKeyDown}>
         {props.items.map((todo: any, idx: number) => (
           <MyTodoListItem
             {...todo}
-            // tabIndex={0}
             key={`TodoItem.${idx}`}
             divider={idx !== props.items.length - 1}
             onButtonClick={() => props.onItemRemove(todo)}
@@ -38,7 +56,6 @@ const TodoList = styled((props: Props) => {
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.87);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  background-color: #fff;
 
   ul {
     margin: 0;

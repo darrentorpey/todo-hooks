@@ -56,7 +56,7 @@ export const darkTheme: Theme = {
     primaryMedium: '#555555',
     primaryLight: '#898989',
     primaryHighlight: '#B9B9B9',
-    secondary: '#0f2185',
+    secondary: '#0f6155',
     secondaryLight: '#4f61C5',
     secondaryHighlight: '#6F81E5',
     backgroundNeutral: '#222222',

@@ -3,7 +3,7 @@ import React, { memo } from 'react'
 import EnterString from './EnterString'
 
 interface Props {
-  focus: boolean
+  focus?: boolean
   onAdd(str: string): void
 }
 
@@ -16,5 +16,9 @@ const AddTodo: React.FC<Props> = memo(props => {
     />
   )
 })
+
+AddTodo.defaultProps = {
+  focus: false,
+}
 
 export default AddTodo
