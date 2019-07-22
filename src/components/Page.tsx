@@ -1,4 +1,4 @@
-import { styled } from '../theme'
+import { styled } from '~/theme'
 
 export const Page = styled.div`
   background-color: ${props => props.theme.palette.backgroundNeutral};

@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import { styled } from '../theme'
+import { styled } from '~/theme'
 
 interface Props {
   checked: boolean

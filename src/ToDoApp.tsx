@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { TopBar } from './components/TopBar'
-import AddTodo from './components/AddTodo'
-import TodoList from './components/TodoList'
-import { Page } from './components/Page'
+import { TopBar } from '~/components/TopBar'
+import AddTodo from '~/components/AddTodo'
+import TodoList from '~/components/TodoList'
+import { Page } from '~/components/Page'
 
-import { useTodos } from './hooks/data-hooks'
+import { useTodos } from '~/hooks/data-hooks'
 
 export const ToDoApp = () => {
   const { todos, addTodo, checkTodo, removeTodo } = useTodos()

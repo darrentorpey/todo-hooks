@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { styled } from '../theme'
-import { MyTodoListItem } from './TodoListItem'
+import { MyTodoListItem } from '~/components/TodoListItem'
+
+import { styled } from '~/theme'
 
 interface Props {
   className?: string

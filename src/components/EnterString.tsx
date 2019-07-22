@@ -1,8 +1,10 @@
 import React, { memo, useCallback } from 'react'
 
-import { useInputValue } from '../hooks/control-hooks'
-import { Button } from './Button'
-import { styled } from '../theme'
+import { Button } from '~/components/Button'
+
+import { useInputValue } from '~/hooks/control-hooks'
+
+import { styled } from '~/theme'
 
 interface Props {
   buttonText?: string

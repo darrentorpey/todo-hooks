@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import EnterString from './EnterString'
+import EnterString from '~/components/EnterString'
 
 interface Props {
   focus?: boolean

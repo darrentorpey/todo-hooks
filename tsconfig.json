@@ -1,15 +1,21 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "module": "commonjs",
-    "jsx": "react",
     "esModuleInterop": true,
-    "sourceMap": true,
-    "allowJs": true,
+    "strict": true,
+    "jsx": "react",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
     "lib": [
-      "es6",
-      "dom"
-    ],
-    "rootDir": "src",
-    "moduleResolution": "node"
-  }
+      "dom",
+      "es2015"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
