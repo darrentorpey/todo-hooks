@@ -13,27 +13,38 @@ const SwapperButton = styled.button`
   padding: 3px 8px;
   font-size: 16px;
   font-weight: bold;
-  border: none;
+  border: 2px solid gray;
   border-radius: 10px;
   text-transform: uppercase;
 `
 
-export const Themer = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = React.useState('dark')
+function useToggle<T>(items: T[], startIndex = 0) {
+  const [index, setIndex] = React.useState(startIndex)
+
+  const toggleGroup = {
+    get current() {
+      return items[index]
+    },
+    next() {
+      setIndex((index + 1) % items.length)
+    },
+  }
+
+  return toggleGroup
+}
+
+export const Themer: React.FC = ({ children }) => {
+  const toggleGroup = useToggle([darkTheme, lightTheme])
 
   function swapTheme() {
-    if (theme === 'dark') {
-      setTheme('light')
-    } else {
-      setTheme('dark')
-    }
+    toggleGroup.next()
   }
 
   return (
-    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+    <ThemeProvider theme={toggleGroup.current}>
       {children}
 
-      <SwapperButton onClick={swapTheme}>{theme}</SwapperButton>
+      <SwapperButton onClick={swapTheme}>Swap Theme</SwapperButton>
     </ThemeProvider>
   )
 }
