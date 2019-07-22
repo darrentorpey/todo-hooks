@@ -8,7 +8,6 @@ import { styled } from '~/theme'
 
 interface Props {
   buttonText?: string
-  focus: boolean
   inputValue?: string
   onAdd(str: string): void
   placeholder: string
@@ -152,7 +151,6 @@ const EnterString: React.FC<Props> = memo((props: any) => {
           <div>
             <div>
               <input
-                autoFocus={props.focus}
                 placeholder={props.placeholder}
                 value={inputValue}
                 onChange={changeInput}

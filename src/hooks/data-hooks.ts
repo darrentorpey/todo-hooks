@@ -29,8 +29,12 @@ const REMOVE_TODO = gql`
   }
 `
 
+interface Data {
+  todos: any[]
+}
+
 export const useTodos = () => {
-  const { loading, data } = useQuery(GET_TODOS)
+  const { loading, data } = useQuery<Data>(GET_TODOS)
   const [toggleTodo] = useMutation(TOGGLE_TODO)
   const [removeTodo] = useMutation(REMOVE_TODO)
   const [addTodo] = useMutation(ADD_TODO)
@@ -39,6 +43,9 @@ export const useTodos = () => {
     return {
       todos: [],
       loading,
+      addTodo: () => {},
+      checkTodo: () => {},
+      removeTodo: () => {},
     }
   }
 

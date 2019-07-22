@@ -1,20 +1,18 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
-import { ThemeProvider } from 'emotion-theming'
 
 import { client } from '~/client'
 
 import { ToDoApp } from '~/ToDoApp'
 
-import { darkTheme as theme } from '~/theme'
-// import { theme } from '~/theme'
+import { Themer } from '~/components/Themer'
 
 const App = () => (
   <ApolloProvider client={client}>
-    <ThemeProvider theme={theme}>
+    <Themer>
       <ToDoApp />
-    </ThemeProvider>
+    </Themer>
   </ApolloProvider>
 )
 
