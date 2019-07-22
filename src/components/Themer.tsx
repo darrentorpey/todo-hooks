@@ -1,9 +1,9 @@
 import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
 
-import { darkTheme } from '~/theme'
-import { theme as lightTheme } from '~/theme'
-import { styled } from '~/theme'
+import { useToggle } from '~/hooks'
+
+import { darkTheme, lightTheme, styled } from '~/theme'
 
 const SwapperButton = styled.button`
   position: fixed;
@@ -18,30 +18,15 @@ const SwapperButton = styled.button`
   text-transform: uppercase;
 `
 
-function useToggle<T>(items: T[], startIndex = 0) {
-  const [index, setIndex] = React.useState(startIndex)
-
-  const toggleGroup = {
-    get current() {
-      return items[index]
-    },
-    next() {
-      setIndex((index + 1) % items.length)
-    },
-  }
-
-  return toggleGroup
-}
-
 export const Themer: React.FC = ({ children }) => {
-  const toggleGroup = useToggle([darkTheme, lightTheme])
+  const toggle = useToggle([darkTheme, lightTheme])
 
   function swapTheme() {
-    toggleGroup.next()
+    toggle.next()
   }
 
   return (
-    <ThemeProvider theme={toggleGroup.current}>
+    <ThemeProvider theme={toggle.current}>
       {children}
 
       <SwapperButton onClick={swapTheme}>Swap Theme</SwapperButton>

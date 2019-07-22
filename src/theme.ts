@@ -24,7 +24,7 @@ export interface Theme {
   }
 }
 
-export const theme: Theme = {
+export const lightTheme: Theme = {
   // tslint:disable:object-literal-sort-keys
   palette: {
     primary: '#444444',
