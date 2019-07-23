@@ -27,7 +27,7 @@ export interface Theme {
 export const lightTheme: Theme = {
   // tslint:disable:object-literal-sort-keys
   palette: {
-    primary: '#444444',
+    primary: '#333333',
     primaryNeutral: '#BBBBEE',
     primaryMedium: '#9999CC',
     primaryLight: '#3f51b5',
@@ -59,7 +59,7 @@ export const darkTheme: Theme = {
     secondary: '#0f6155',
     secondaryLight: '#4f61C5',
     secondaryHighlight: '#6F81E5',
-    backgroundNeutral: '#222222',
+    backgroundNeutral: '#191919',
     destructive: '#f50057',
   },
   typography: {

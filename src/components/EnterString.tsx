@@ -15,7 +15,7 @@ interface Props {
 
 const Wrap = styled.div`
   color: rgba(0, 0, 0, 0.87);
-  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  /* transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
   background-color: ${props => props.theme.palette.primaryNeutral};
   border-radius: 4px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -47,6 +47,7 @@ const Wrap = styled.div`
         flex-direction: column;
         vertical-align: top;
         width: 100%;
+        height: 100%;
 
         > div {
           cursor: text;
@@ -57,6 +58,7 @@ const Wrap = styled.div`
           font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
           line-height: 1.1875em;
           width: 100%;
+          height: 100%;
           position: relative;
 
           &::before {
@@ -65,8 +67,7 @@ const Wrap = styled.div`
             bottom: 0;
             content: '\00a0';
             position: absolute;
-            transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1)
-              0ms;
+            /* transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
             border-bottom: 1px solid
               ${props => props.theme.palette.primaryMedium};
             pointer-events: none;
@@ -94,18 +95,18 @@ const Wrap = styled.div`
         height: 1.1875em;
         margin: 0;
         display: block;
-        padding: 6px 0 7px;
+        padding: 6px 0 6px 5px;
         min-width: 0;
         background: none;
         box-sizing: content-box;
         -webkit-tap-highlight-color: transparent;
 
         &:focus {
+          outline-color: ${props => props.theme.palette.secondaryHighlight};
+
           &::placeholder {
             opacity: 0;
           }
-
-          padding-left: 0.5em;
         }
       }
     }
