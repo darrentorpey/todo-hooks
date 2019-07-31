@@ -1,3 +1,3 @@
 import { useToggle } from './toggle'
 
-export { useToggle } 
+export { useToggle }

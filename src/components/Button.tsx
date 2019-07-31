@@ -16,9 +16,6 @@ export const Button = styled.button`
   min-width: 64px;
   box-sizing: border-box;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-weight: 500;
   line-height: 1.75;
@@ -41,7 +38,6 @@ export const Button = styled.button`
   &:focus {
     color: ${props => props.theme.palette.secondaryHighlight};
     border: 2px solid ${props => props.theme.palette.secondaryHighlight};
-    /* padding: 3px 14px; */
     padding: 5px 16px 4px;
     margin-top: -1px;
   }

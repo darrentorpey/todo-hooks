@@ -1,6 +1,6 @@
-import ReactDOM from 'react-dom'
-import React from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 import { client } from '~/client'
 

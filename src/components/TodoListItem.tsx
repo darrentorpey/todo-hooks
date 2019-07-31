@@ -28,6 +28,10 @@ const MyCheckBoxWrapper = styled.li<Partial<Props>>`
   background-color: ${props => props.theme.palette.primaryNeutral};
   color: ${props => props.theme.palette.primary};
 
+  &:hover {
+    background-color: ${props => props.theme.palette.primaryMediumLight};
+  }
+
   &:focus-within {
     background-color: ${props => props.theme.palette.primaryMedium};
   }
