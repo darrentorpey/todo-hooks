@@ -15,7 +15,6 @@ interface Props {
 
 const Wrap = styled.div`
   color: rgba(0, 0, 0, 0.87);
-  /* transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
   background-color: ${props => props.theme.palette.primaryNeutral};
   border-radius: 4px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),

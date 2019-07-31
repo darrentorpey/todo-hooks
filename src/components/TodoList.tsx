@@ -11,21 +11,37 @@ interface Props {
   onItemRemove(todo: any): void
 }
 
-function onKeyDown(e) {
-  // console.log(e.key)
+function onKeyDown(e: React.KeyboardEvent) {
   if (e.key === 'ArrowDown') {
     const focused = document.querySelector('li:focus-within')
+    if (!focused) {
+      return
+    }
+
     const next: HTMLElement = focused.nextElementSibling as HTMLElement
 
     if (next) {
-      next.querySelector('input').focus()
+      const input = next.querySelector('input')
+
+      if (input) {
+        input.focus()
+      }
     }
   } else if (e.key === 'ArrowUp') {
     const focused = document.querySelector('li:focus-within')
+
+    if (!focused) {
+      return
+    }
+
     const prev = focused.previousElementSibling as HTMLElement
 
     if (prev && 'focus' in prev) {
-      prev.querySelector('input').focus()
+      const input = prev.querySelector('input')
+
+      if (input) {
+        input.focus()
+      }
     }
   }
 }

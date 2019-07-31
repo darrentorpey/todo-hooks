@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'emotion-theming'
 import React from 'react'
 
-import { useToggle } from '~/hooks'
+import { useCycler } from '~/hooks'
 
 import { darkTheme, lightTheme, styled } from '~/theme'
 
@@ -19,14 +19,14 @@ const SwapperButton = styled.button`
 `
 
 export const Themer: React.FC = ({ children }) => {
-  const toggle = useToggle([darkTheme, lightTheme], 1)
+  const cycler = useCycler([darkTheme, lightTheme], lightTheme)
 
   function swapTheme() {
-    toggle.next()
+    cycler.next()
   }
 
   return (
-    <ThemeProvider theme={toggle.current}>
+    <ThemeProvider theme={cycler.current}>
       {children}
 
       <SwapperButton onClick={swapTheme}>Swap Theme</SwapperButton>

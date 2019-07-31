@@ -5,7 +5,9 @@ import { useState } from 'react'
  * @param items The items through which setIndex will cycle
  * @param startIndex
  */
-export function useToggle<T>(items: T[], startIndex = 0) {
+export function useCycler<T>(items: T[], startOn: T | null = null) {
+  const startIndex = startOn !== null ? items.indexOf(startOn) : 0
+
   const [index, setIndex] = useState(startIndex)
 
   return {

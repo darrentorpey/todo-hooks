@@ -1,3 +1,3 @@
-import { useToggle } from './toggle'
+import { useCycler } from './collection-hooks'
 
-export { useToggle }
+export { useCycler }
