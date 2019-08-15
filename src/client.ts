@@ -9,7 +9,7 @@ const startingTodos = [
     __typename: 'Todo',
     id: 1,
     checked: false,
-    text: 'Demonstrate greatness',
+    text: 'Demonstrate greatness!!!',
   },
   {
     __typename: 'Todo',

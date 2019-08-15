@@ -2,6 +2,7 @@ import styled, { CreateStyled } from '@emotion/styled'
 
 // tslint:disable:object-literal-sort-keys
 export interface Theme {
+  name: string
   palette: {
     primary: string
     primaryMedium: string
@@ -18,6 +19,7 @@ export interface Theme {
 }
 
 export const lightTheme: Theme = {
+  name: 'light',
   palette: {
     primary: '#333333',
     primaryNeutral: '#BBBBEE',
@@ -34,6 +36,7 @@ export const lightTheme: Theme = {
 }
 
 export const darkTheme: Theme = {
+  name: 'dark',
   palette: {
     primary: '#DDDDDD',
     primaryNeutral: '#333333',

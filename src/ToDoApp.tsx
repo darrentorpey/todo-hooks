@@ -12,7 +12,9 @@ export const ToDoApp = () => {
 
   return (
     <Page>
-      <TopBar>To-Do App in TypeScript ft. React Hooks</TopBar>
+      <TopBar>
+        To-Do App in <em>TypeScript</em> ft. React Hooks
+      </TopBar>
 
       <AddTodo onAdd={addTodo} />
 

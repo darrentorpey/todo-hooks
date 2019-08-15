@@ -11,6 +11,11 @@ interface Props {
   onButtonClick(): void
 }
 
+/**
+ * Mmmmm 200 lines and 4 distinct visual components is a bit much for one file...
+ *   maybe we should break this up?
+ */
+
 const MyCheckBoxWrapper = styled.li<Partial<Props>>`
   width: 100%;
   position: relative;
@@ -23,7 +28,7 @@ const MyCheckBoxWrapper = styled.li<Partial<Props>>`
   background-clip: padding-box;
 
   border-bottom: ${props =>
-    props.divider ? '1px solid rgba(0, 0, 0, 0.62)' : '0'};
+    props.divider ? '1px solid rgba(0, 0, 0, 0.42)' : '0'};
 
   background-color: ${props => props.theme.palette.primaryNeutral};
   color: ${props => props.theme.palette.primary};

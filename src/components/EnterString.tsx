@@ -130,7 +130,7 @@ const Wrap = styled.div`
  *
  * Most of the details here are MUI-specific
  */
-const EnterString: React.FC<Props> = memo((props: any) => {
+const EnterString: React.FC<Props> = memo(props => {
   const callbacks: { onEnter?(): void } = {}
 
   const { inputValue, changeInput, clearInput, keyInput } = useInputValue({

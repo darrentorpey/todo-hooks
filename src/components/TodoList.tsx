@@ -57,7 +57,7 @@ const TodoList = styled((props: Props) => {
         {props.items.map((todo: any, idx: number) => (
           <MyTodoListItem
             {...todo}
-            key={`TodoItem.${idx}`}
+            key={`Santa.${idx}`}
             divider={idx !== props.items.length - 1}
             onButtonClick={() => props.onItemRemove(todo)}
             onCheckBoxToggle={() => props.onItemCheck(todo)}

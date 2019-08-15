@@ -10,7 +10,7 @@ const SwapperButton = styled.button`
   right: 10px;
   bottom: 10px;
   cursor: pointer;
-  padding: 3px 8px;
+  padding: 13px 8px;
   font-size: 16px;
   font-weight: bold;
   border: 2px solid gray;
@@ -19,7 +19,14 @@ const SwapperButton = styled.button`
 `
 
 export const Themer: React.FC = ({ children }) => {
-  const cycler = useCycler([darkTheme, lightTheme], lightTheme)
+  const themeName = localStorage.getItem('themeName')
+  const startingTheme = themeName
+    ? [darkTheme, lightTheme].find(t => t.name === themeName)
+    : lightTheme
+
+  const cycler = useCycler([darkTheme, lightTheme], startingTheme)
+
+  localStorage.setItem('themeName', cycler.current.name)
 
   function swapTheme() {
     cycler.next()
